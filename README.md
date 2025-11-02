@@ -140,4 +140,4 @@ curl -s "${API_URL%/users}/users/test123"</code></pre>
 
 ## Architecture Diagram
 
-[<img src="diagram.png" width="500" alt="Serverless API Architecture"/>]
+<img src="diagram.png" width="1000" alt="Serverless API Architecture"/>
