@@ -26,6 +26,14 @@ This project builds a complete serverless API locally, simulating AWS using Terr
 - Docker
 - Python 3.9+
 
+## Customization
+
+- `lambda_function.py` - Your business logic
+- `envs/dev/terraform.tfvars` -Environment variables
+- `modules/dynamodb/main.tf` - Database schema
+- `modules/api_gateway/main.tf` - API routes
+- `modules/lambda/main.tf` - Lambda configuration
+
 ## Start LocalStack
 
 <pre><code>docker run -d -p 4566:4566 \
