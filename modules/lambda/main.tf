@@ -48,8 +48,8 @@ resource "aws_lambda_function" "main" {
   handler         = "lambda_function.lambda_handler"
   runtime         = var.runtime
   timeout         = 30
-  
-  # ADD THIS LINE - crucial for detecting code changes
+
+
   source_code_hash = filebase64sha256("lambda.zip")
 
   environment {
@@ -66,7 +66,6 @@ resource "aws_lambda_permission" "api_gateway" {
   function_name = aws_lambda_function.main.function_name
   principal     = "apigateway.amazonaws.com"
 
-  # The /*/* portion grants access from any method on any resource
-  # within the API Gateway "REST API"
+
   source_arn = "${replace(aws_lambda_function.main.arn, var.function_name, "")}*"
 }
